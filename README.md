@@ -1,0 +1,2 @@
+# docs
+Parami API Documentation
