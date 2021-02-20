@@ -1,0 +1,70 @@
+{
+  "runtime_id": 1,
+  "types": {
+    "Address": "MultiAddress",
+    "LookupSource": "MultiAddress",
+    "ExtrinsicPayloadValue": {
+      "type": "struct",
+      "type_mapping": [
+        ["call", "CallBytes"],
+        ["era", "Era"],
+        ["nonce", "Compact<Index>"],
+        ["tip", "Compact<Balance>"],
+        ["specVersion", "u32"],
+        ["transactionVersion", "u32"],
+        ["genesisHash", "Hash"],
+        ["blockHash", "Hash"]
+      ]
+    },
+    "Did": "Vec<u8>",
+    "MyDid": {
+      "type": "struct",
+      "type_mapping": [
+        ["hash", "Hash"],
+        ["did", "Vec<u8>"]
+      ]
+    },
+    "LockedRecords": {
+      "type": "struct",
+      "type_mapping": [
+        ["locked_time", "Moment"],
+        ["locked_period", "Moment"],
+        ["locked_funds", "Balance"],
+        ["rewards_ratio", "u64"],
+        ["max_quota", "u64"]
+      ]
+    },
+    "UnlockedRecords": {
+      "type": "struct",
+      "type_mapping": [
+        ["unlocked_time", "Moment"],
+        ["unlocked_funds", "Balance"]
+      ]
+    },
+    "ExternalAddress": {
+      "type": "struct",
+      "type_mapping": [
+        ["btc", "Vec<u8>"],
+        ["eth", "Vec<u8>"],
+        ["eos", "Vec<u8>"]
+      ]
+    },
+    "MetadataRecord": {
+      "type": "struct",
+      "type_mapping": [
+        ["address", "AccountId"],
+        ["superior", "Hash"],
+        ["creator", "AccountId"],
+        ["did", "Did"],
+        ["locked_records", "Option<LockedRecords>"],
+        ["unlocked_records", "Option<UnlockedRecords>"],
+        ["donate", "Option<Balance>"],
+        ["social_account", "Option<Hash>"],
+        ["subordinate_count", "u64"],
+        ["group_name", "Option<Vec<u8>>"],
+        ["external_address", "ExternalAddress"]
+      ]
+    }
+  },
+  "versioning": []
+}
