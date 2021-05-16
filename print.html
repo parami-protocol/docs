@@ -1,0 +1,495 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Parami Documentation</title>
+        
+        <meta name="robots" content="noindex" />
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+        <link rel="stylesheet" href="css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="overview.html"><strong aria-hidden="true">1.</strong> Overview</a></li><li class="chapter-item expanded "><a href="runtime/runtime.html"><strong aria-hidden="true">2.</strong> Runtime</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="runtime/did.html"><strong aria-hidden="true">2.1.</strong> DID</a></li><li class="chapter-item expanded "><a href="runtime/ads.html"><strong aria-hidden="true">2.2.</strong> ADs</a></li><li class="chapter-item expanded "><a href="runtime/token.html"><strong aria-hidden="true">2.3.</strong> Bridge and Token Ecoomy</a></li><li class="chapter-item expanded "><a href="runtime/types.html"><strong aria-hidden="true">2.4.</strong> Chain Types</a></li></ol></li><li class="chapter-item expanded "><a href="node/node.html"><strong aria-hidden="true">3.</strong> Node</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="node/development.html"><strong aria-hidden="true">3.1.</strong> Development</a></li></ol></li><li class="chapter-item expanded "><a href="wallet.html"><strong aria-hidden="true">4.</strong> Wallet</a></li><li class="chapter-item expanded "><a href="faq.html"><strong aria-hidden="true">5.</strong> FAQ</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Parami Documentation</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                        
+
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="parami-protocol"><a class="header" href="#parami-protocol">Parami Protocol</a></h1>
+<p>Parami Protocol proposed an AD 3.0 paradigm powered by blockchain for Web 3.0. It provides a protocol stack for building a user-centric, tokenized advertising economy.</p>
+<h2 id="decentralized-identity"><a class="header" href="#decentralized-identity">Decentralized Identity</a></h2>
+<p><img src="https://parami.io/img/parami/verifydata.png" alt="DID" /></p>
+<p>Parami Protocol provides a complete set of PDID (Parami DID) solutions compatible with W3C DID standard onParami Node, and expands its business on the basis of DID standard. Parami Protocol will also provide DID aggregators for other DID standards.</p>
+<h2 id="ad-with-privacy"><a class="header" href="#ad-with-privacy">AD with Privacy</a></h2>
+<p><img src="https://parami.io/img/parami/advertiser.png" alt="Ad" /></p>
+<p>The AD Privacy Layer provides a personal crypto advertising preference (PCAP) document attached to userDID, which contains user advertising privacy management service. The PCAP document works not only forpayment but also for user preference data. The preserved data can be used but can not be seen.</p>
+<p>The decentralized oracle is designed for collecting data from conventional Internet. It is built as part of Substrate Offchain Worker(OCW) and particularly works for Ad verification with low fee and fast response.</p>
+<p><img src="https://parami.io/img/parami/adruntime.png" alt="Ad-Oracle" /></p>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="the-parami-runtime"><a class="header" href="#the-parami-runtime">The Parami Runtime</a></h1>
+<p>The Parami Runtime is based on substrate framework, which serves as the foundation for
+all AD3.0 functionalities.</p>
+<p>Github Repository: <a href="https://github.com/parami-protocol/parami">https://github.com/parami-protocol/parami</a></p>
+<p>Branch for running testnet: <code>dana-v2</code></p>
+<p>Development branch: <code>dana-v3</code> and <code>main</code></p>
+<h2 id="pallets"><a class="header" href="#pallets">Pallets</a></h2>
+<p>There are some pallets from Parami to implement basic function:</p>
+<ul>
+<li><a href="https://github.com/parami-protocol/parami/blob/main/pallets/did/src/lib.rs">did</a> is DID implementation</li>
+<li><a href="https://github.com/parami-protocol/parami/blob/main/pallets/ads/src/lib.rs">ads</a> is used for ADs metadata</li>
+<li><a href="https://github.com/parami-protocol/parami/blob/main/pallets/bridge/src/lib.rs">bridge</a> is used for bridging to ETH</li>
+<li><a href="https://github.com/parami-protocol/parami/blob/main/pallets/nft/src/lib.rs">nft</a> is the ADs NFT</li>
+<li><a href="https://github.com/parami-protocol/parami/blob/dana-v3/pallets/token/src/lib.rs">token</a> is the social token for users</li>
+<li><a href="https://github.com/parami-protocol/parami/blob/dana-v3/pallets/swap/src/lib.rs">swap</a> is the AMM pallet to swap social tokens</li>
+</ul>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="the-did"><a class="header" href="#the-did">The DID</a></h1>
+<p>Decentralized identifiers (DIDs) are a new type of identifier that enables verifiable, decentralized digital identity. A DID refers to any subject (e.g., a person, organization, thing, data model, abstract entity, etc.) as determined by the controller of the DID.</p>
+<p>Parami runtime implements PDID(Parami DID) in the <code>did</code> pallet.
+A DID URL is something like <code>did:ad3:N3nkM4gC1XUoE5V8jvMz44WtPCgEPbjCKS</code>.</p>
+<h2 id="pallet-storage"><a class="header" href="#pallet-storage">Pallet storage</a></h2>
+<pre><code>Did.GenesisAccount
+Did.BaseQuota
+Did.MinDeposit
+Did.FeeToPrevious
+
+Did.Identity
+Did.IdentityOf
+Did.SocialAccount
+Did.Metadata
+
+Did.AllDidCount
+Did.UserKeys
+Did.DidIndices
+</code></pre>
+<h2 id="extrinsics"><a class="header" href="#extrinsics">Extrinsics</a></h2>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>create(pubkey: Vec&lt;u8&gt;, address: T::AccountId, did_type: Vec&lt;u8&gt;, superior: T::Hash, social_account: Option&lt;Vec&lt;u8&gt;&gt;, social_superior: Option&lt;Vec&lt;u8&gt;&gt;)
+update(to: T::AccountId) # transfer did ownership
+transfer(to_user: T::Hash, value: T::Balance, memo: Vec&lt;u8&gt;)
+lock(value: T::Balance, period: T::Moment)
+force_lock(user: T::Hash, value: T::Balance) # by root
+unlock(value: T::Balance)
+add_external_address(add_type: Vec&lt;u8&gt;, address: Vec&lt;u8&gt;)
+set_group_name(name: Vec&lt;u8&gt;)
+judge(account: T::AccountId)
+<span class="boring">}
+</span></code></pre></pre>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="the-ads"><a class="header" href="#the-ads">The ADs</a></h1>
+<h2 id="ads-storage"><a class="header" href="#ads-storage">Ads Storage</a></h2>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>trait Store for Module&lt;T: Trait&gt; as AdsModule {
+    pub Contract get(fn contract) config(): T::AccountId;
+    pub MinDeposit get(fn min_deposit) config(): T::Balance;
+    pub AdsRecords get(fn ads_records): map hasher(twox_64_concat) AdIndex =&gt; AdsMetadata&lt;T::Balance, T::Moment&gt;;
+    pub AdsActives get(fn ads_actives): map hasher(twox_64_concat) ActiveIndex =&gt; Option&lt;AdIndex&gt;;
+    pub AdsActiveCount get(fn ads_active_count): Option&lt;ActiveIndex&gt;;
+    pub AdsOwner get(fn ads_owner):map hasher(twox_64_concat) AdIndex =&gt; T::Hash;
+    pub AllAdsCount get(fn all_ads_count): AdIndex;
+    pub OwnedAds get(fn owned_ads):map hasher(twox_64_concat) T::Hash =&gt; Vec&lt;AdIndex&gt;;
+}
+<span class="boring">}
+</span></code></pre></pre>
+<h2 id="ads-call"><a class="header" href="#ads-call">Ads Call</a></h2>
+<p>TODO</p>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="bridge-and-token-ecoomy"><a class="header" href="#bridge-and-token-ecoomy">Bridge and Token Ecoomy</a></h1>
+<p>TODO</p>
+<h2 id="social-token"><a class="header" href="#social-token">Social Token</a></h2>
+<p>TODO</p>
+<h2 id="bridge"><a class="header" href="#bridge">Bridge</a></h2>
+<p>TODO</p>
+<h2 id="nft"><a class="header" href="#nft">NFT</a></h2>
+<p>TODO</p>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="chain-types"><a class="header" href="#chain-types">Chain Types</a></h1>
+<p>The chain types can be found at <a href="https://github.com/parami-protocol/parami#settings">Github Repo</a>.</p>
+<ul>
+<li>Open Polkadot UI , Settings -&gt; custom endpoint: <code>wss://cn3.dev.ad3.app:8443</code></li>
+<li>Go to Settings, open Developer tab. Insert in textbox description of types (copy&amp;paste from here) and Save it.</li>
+</ul>
+<pre><code class="language-json">{
+    &quot;Address&quot;: &quot;MultiAddress&quot;,
+    &quot;LookupSource&quot;: &quot;MultiAddress&quot;,
+    &quot;Did&quot;:&quot;Vec&lt;u8&gt;&quot;,
+    &quot;ExternalAddress&quot;:{
+        &quot;btc&quot;:&quot;Vec&lt;u8&gt;&quot;,
+        &quot;eth&quot;:&quot;Vec&lt;u8&gt;&quot;,
+        &quot;eos&quot;:&quot;Vec&lt;u8&gt;&quot;
+    },
+    &quot;LockedRecords&quot;:{
+        &quot;locked_time&quot;:&quot;Moment&quot;,
+        &quot;locked_period&quot;:&quot;Moment&quot;,
+        &quot;locked_funds&quot;:&quot;Balance&quot;,
+        &quot;rewards_ratio&quot;:&quot;u64&quot;,
+        &quot;max_quota&quot;:&quot;u64&quot;
+    },
+    &quot;UnlockedRecords&quot;:{
+        &quot;unlocked_time&quot;:&quot;Moment&quot;,
+        &quot;unlocked_funds&quot;:&quot;Balance&quot;
+    },
+    &quot;MetadataRecord&quot;:{
+        &quot;address&quot;:&quot;AccountId&quot;,
+        &quot;superior&quot;:&quot;Hash&quot;,
+        &quot;creator&quot;:&quot;AccountId&quot;,
+        &quot;did&quot;:&quot;Did&quot;,
+        &quot;locked_records&quot;:&quot;Option&lt;LockedRecords&lt;Balance, Moment&gt;&gt;&quot;,
+        &quot;unlocked_records&quot;:&quot;Option&lt;UnlockedRecords&lt;Balance, Moment&gt;&gt;&quot;,
+        &quot;donate&quot;:&quot;Option&lt;Balance&gt;&quot;,
+        &quot;social_account&quot;:&quot;Option&lt;Hash&gt;&quot;,
+        &quot;subordinate_count&quot;:&quot;u64&quot;,
+        &quot;group_name&quot;:&quot;Option&lt;Vec&lt;u8&gt;&gt;&quot;,
+        &quot;external_address&quot;:&quot;ExternalAddress&quot;
+    },
+    &quot;AdsLinkedItem&quot;:{
+        &quot;prev&quot;:&quot;Option&lt;AdIndex&gt;&quot;,
+        &quot;next&quot;:&quot;Option&lt;AdIndex&gt;&quot;
+    },
+    &quot;ActiveIndex&quot;:&quot;u64&quot;,
+    &quot;AdIndex&quot;:&quot;u64&quot;,
+    &quot;DistributeType&quot;:{
+        &quot;_enum&quot;:[
+            &quot;ADVERTISER&quot;,
+            &quot;AGENT&quot;
+        ]
+    },
+    &quot;AdsMetadata&quot;:{
+        &quot;advertiser&quot;:&quot;Vec&lt;u8&gt;&quot;,
+        &quot;topic&quot;:&quot;Vec&lt;u8&gt;&quot;,
+        &quot;total_amount&quot;:&quot;Balance&quot;,
+        &quot;spend_amount&quot;:&quot;Balance&quot;,
+        &quot;single_click_fee&quot;:&quot;Balance&quot;,
+        &quot;display_page&quot;:&quot;Vec&lt;u8&gt;&quot;,
+        &quot;landing_page&quot;:&quot;Option&lt;Vec&lt;u8&gt;&gt;&quot;,
+        &quot;create_time&quot;:&quot;Moment&quot;,
+        &quot;active&quot;:&quot;Option&lt;ActiveIndex&gt;&quot;,
+        &quot;distribute_type&quot;:&quot;DistributeType&quot;
+    },
+    &quot;EventHTLC&quot;:{
+        &quot;eth_contract_addr&quot;:&quot;Vec&lt;u8&gt;&quot;,
+        &quot;htlc_block_number&quot;:&quot;BlockNumber&quot;,
+        &quot;event_block_number&quot;:&quot;BlockNumber&quot;,
+        &quot;expire_height&quot;:&quot;u32&quot;,
+        &quot;random_number_hash&quot;:&quot;Vec&lt;u8&gt;&quot;,
+        &quot;swap_id&quot;:&quot;Hash&quot;,
+        &quot;sender_addr&quot;:&quot;Vec&lt;u8&gt;&quot;,
+        &quot;sender_chain_type&quot;:&quot;HTLCChain&quot;,
+        &quot;receiver_addr&quot;:&quot;Hash&quot;,
+        &quot;receiver_chain_type&quot;:&quot;HTLCChain&quot;,
+        &quot;recipient_addr&quot;:&quot;Vec&lt;u8&gt;&quot;,
+        &quot;out_amount&quot;:&quot;Balance&quot;,
+        &quot;event_type&quot;:&quot;HTLCType&quot;
+    },
+    &quot;HTLCChain&quot;:{
+        &quot;_enum&quot;:[
+            &quot;ETHMain&quot;,
+            &quot;PRM&quot;
+        ]
+    },
+    &quot;HTLCStates&quot;:{
+        &quot;_enum&quot;:[
+            &quot;INVALID&quot;,
+            &quot;OPEN&quot;,
+            &quot;COMPLETED&quot;,
+            &quot;EXPIRED&quot;
+        ]
+    },
+    &quot;EventLogSource&quot;:{
+        &quot;event_name&quot;:&quot;Vec&lt;u8&gt;&quot;,
+        &quot;event_url&quot;:&quot;Vec&lt;u8&gt;&quot;,
+        &quot;event_data&quot;:&quot;Vec&lt;u8&gt;&quot;
+    },
+    &quot;HTLCType&quot;:{
+        &quot;_enum&quot;:[
+            &quot;HTLC&quot;,
+            &quot;Claimed&quot;,
+            &quot;Refunded&quot;
+        ]
+    },
+    &quot;Erc20EventTransfer&quot;:{
+        &quot;value&quot;: &quot;Compact&lt;Balance&gt;&quot;,
+        &quot;from&quot;: &quot;Vec&lt;u8&gt;&quot;
+    },
+    &quot;Erc20EventWithdraw&quot; :{
+        &quot;value&quot;: &quot;Compact&lt;Balance&gt;&quot;,
+        &quot;who&quot;: &quot;Vec&lt;u8&gt;&quot;,
+        &quot;status&quot;: &quot;bool&quot;
+    },
+    &quot;Erc20EventRedeem&quot; :{
+        &quot;value&quot;: &quot;Compact&lt;Balance&gt;&quot;,
+        &quot;from&quot;: &quot;Vec&lt;u8&gt;&quot;,
+        &quot;to&quot;: &quot;AccountId&quot;
+    },
+    &quot;Erc20Event&quot;: {
+        &quot;_enum&quot;: {
+            &quot;Transfer&quot;: &quot;Erc20EventTransfer&quot;,
+            &quot;Withdraw&quot;: &quot;Erc20EventWithdraw&quot;,
+            &quot;Redeem&quot;: &quot;Erc20EventRedeem&quot;
+        }
+    }
+}
+</code></pre>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="node"><a class="header" href="#node">Node</a></h1>
+<p>The Parami node is the substrate node running on Parami runtime.</p>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="development"><a class="header" href="#development">Development</a></h1>
+<h2 id="build"><a class="header" href="#build">Build</a></h2>
+<p>Install Rust:</p>
+<pre><code class="language-bash">curl https://sh.rustup.rs -sSf | sh
+</code></pre>
+<p>NOTE: change install setting [default toolchain: stable (default)] -&gt; nightly.</p>
+<pre><code class="language-bash">rustup default nightly
+</code></pre>
+<p>Clone Code:</p>
+<pre><code class="language-bash">git clone https://github.com/parami-protocol/parami.git
+cd parami
+git submodule init
+git submodule update
+</code></pre>
+<p>Install required rust target(wasm32):</p>
+<pre><code class="language-bash">.maintain/init.sh
+</code></pre>
+<p>Build Parami:</p>
+<pre><code class="language-bash">cargo build --release
+</code></pre>
+<h2 id="running-a-node"><a class="header" href="#running-a-node">Running a node</a></h2>
+<p>Ensure you have a fresh start if updating from another version:</p>
+<pre><code class="language-bash">./target/release/parami purge-chain
+</code></pre>
+<p>To start a Parami node, run:</p>
+<pre><code class="language-bash">./target/release/parami --chain resources/dana.v2.json
+</code></pre>
+<p>To start the Parami validater node, run:</p>
+<pre><code class="language-bash">./target/release/parami \
+  --chain resources/dana.v2.json \
+  --name NodeName \
+  --validator \
+  --node-key ..... \
+  --keystore-path /path/to/auth
+</code></pre>
+<h2 id="dev-node"><a class="header" href="#dev-node">Dev node</a></h2>
+<p>To start a local dev node, run:</p>
+<pre><code class="language-bash">cargo run --release -- --dev --alice --tmp
+</code></pre>
+<p>To start 2 local nodes, run:</p>
+<pre><code class="language-bash">cargo run -- --chain local --alice --tmp
+</code></pre>
+<p>And:</p>
+<pre><code class="language-bash">cargo run -- --chain local --bob --tmp --port 30334
+</code></pre>
+<p>In different terminal tab.</p>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="the-wallet-app"><a class="header" href="#the-wallet-app">The wallet app</a></h1>
+<p>Parami wallet app is accessible from <a href="https://wallet.parami.io">https://wallet.parami.io</a>, and is avialable on all major social platforms.</p>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="faq"><a class="header" href="#faq">FAQ</a></h1>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+        
+        
+
+    </body>
+</html>
